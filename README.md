@@ -1,5 +1,4 @@
-# first-vue-app
-
+# trial-pack
 ## Project setup
 ```
 npm install
