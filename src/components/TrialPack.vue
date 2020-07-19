@@ -1,19 +1,46 @@
 <template>
-  <div class="trial-pack">
-    <div>Choose size</div>
-    <div>
-    <label v-for="detail in images" v-bind:key="detail.size">
-      <input
-        type="radio"
-        name="size"
-        v-model="selectedSize"
-        v-bind:value="detail.size"
-        v-on:click="changeImg(detail)"
-      />
-      {{detail.size}}
-    </label></div>
-    <img :src="selectedImage" />
-  </div>
+  <b-container>
+    <b-row align-v="start">
+      <b-col>        
+        <b-img :src="selectedImage" fluid alt="Responsive image"></b-img>        
+      </b-col>
+      <b-col>
+        <b-row class="mt-2">
+          <h3>Discover our skin friendliness</h3>
+        </b-row>
+        <b-row class="mt-2">  
+          CHOOSE YOUR SIZE
+        </b-row>
+        <b-row class="mt-2">
+        <b-form-group>
+        <b-form-radio-group
+        class="d-flex"
+          id="btn-radios-2"
+          v-model="selected"
+          :options="options"
+          buttons
+          button-variant="outline-secondary"
+          name="radio-btn-outline"
+          v-on:change="changeSize">
+        </b-form-radio-group>
+        </b-form-group>
+        </b-row>
+      <b-row class="text-justify mb-2">
+        Now test our skin-friendly nappies and get our wet wipes with 99% water to size 1 - 3 or the sensitive wet wipes to size 4 - 5.
+      </b-row>
+      <b-row class="text-justify mt-2">
+        <ul>
+          <li>We pay the products, you only ship.</li>
+          <li>Automatic transition to the cancellable diaper subscription for &euro;49.50 per delivery.</li>
+          <li>Prices incl. VAT, if applicable plus <a href="https://www.lillydoo.com/de/zahlung-und-versand">shipping costs</a></li>
+        </ul>
+      </b-row>
+      <b-row>
+        <b-button block variant="secondary">PUT IN THE SHOPPING CART</b-button>
+      </b-row>      
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -21,23 +48,21 @@ export default {
   name: "TrialPack",
   data() {
     return {
-      images: [
-        { size: "1(2-5 KG)", image: "/assets/lillydoo-testpaket-10.jpg" },
-        { size: "2(4-8 KG)", image: "/assets/lillydoo-testpaket-20.jpg" },
-        { size: "3(6-10 KG)", image: "/assets/lillydoo-testpaket-30.jpg" },
-        { size: "4(9-14 KG)", image: "/assets/lillydoo-testpaket-40.jpg" },
-        { size: "5(11-16 KG)", image: "/assets/lillydoo-testpaket-50.jpg" }
-      ],
-      selectedImage: "/assets/lillydoo-testpaket-10.jpg",
-      selectedSize: "1(2-5 KG)"      
+      selectedImage: "/assets/lillydoo-testpaket-10.jpg",      
+      selected: 'radio1',
+      options: [
+        { text: '1 (2-5 KG)', value: 'radio1', image: "/assets/lillydoo-testpaket-10.jpg" },
+        { text: '2 (4-8 KG)', value: 'radio2', image: "/assets/lillydoo-testpaket-20.jpg" },
+        { text: '3 (6-10 KG)', value: 'radio3', image: "/assets/lillydoo-testpaket-30.jpg" },
+        { text: '4 (9-14 KG)', value: 'radio4', image: "/assets/lillydoo-testpaket-40.jpg" },
+        { text: '5 (11-16 KG)', value: 'radio5', image: "/assets/lillydoo-testpaket-50.jpg" },
+      ]
     };
   },
   methods: {
-    changeImg(source) {
-      this.selectedImage = source.image;
-      this.selectedSize = source.size;
+    changeSize(checked) {
+      this.selectedImage = this.options.find(option => option.value===checked).image;    
     }
   }
 };
-// this.selected = this.images[0];
 </script>
