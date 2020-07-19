@@ -31,8 +31,8 @@
       <b-row class="text-justify mt-2">
         <ul>
           <li>We pay the products, you only ship.</li>
-          <li>Automatic transition to the cancellable diaper subscription for &euro;49.50 per delivery.</li>
-          <li>Prices incl. VAT, if applicable plus <a href="https://www.lillydoo.com/de/zahlung-und-versand">shipping costs</a></li>
+          <li class="text-muted">Automatic transition to the cancellable diaper subscription for &euro;49.50 per delivery.</li>
+          <li>Prices incl. VAT, if applicable plus <a class="text-muted" href="https://www.lillydoo.com/de/zahlung-und-versand">shipping costs</a></li>
         </ul>
       </b-row>
       <b-row>
