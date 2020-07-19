@@ -13,9 +13,7 @@
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "@vue/cli-service": "~4.4.0"
-  },
-  "devDependencies": {
+    "@vue/cli-service": "~4.4.0",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "babel-eslint": "^10.1.0",
@@ -23,6 +21,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
   },
+  "devDependencies": {},
   "eslintConfig": {
     "root": true,
     "env": {
